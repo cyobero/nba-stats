@@ -1,8 +1,12 @@
 import streamlit as st
-import numpy as np
-import pandas as pd
+from utils import load_df
 
 TEAM_CHOICES = ["mavericks", "celtics", "warriors", "heat"]
 
 st.title("2022 NBA Playoffs Statistics")
-st.multiselect("Select team", TEAM_CHOICES)
+team_select = st.multiselect("Select team", TEAM_CHOICES)
+grouped_by = st.radio("Group data by", ["Opponent", "Venue"])
+
+for team in team_select:
+    df = load_df(team, '2021-2022', 'playoffs')
+    st.write(df.groupby(grouped_by).mean())

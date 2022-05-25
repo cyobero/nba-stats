@@ -14,6 +14,6 @@ def load_df(team, year, season='regular_season'):
     `season` are 'regular_season' (default) and 'playoffs'."""
     path = "./data/team/{team}/{year}/{season}.csv".format(team=team, year=year,
                                                            season=season)
-    df = pd.read_csv(path, index_col="Date")
+    df = pd.read_csv(path, index_col="G")
 
     return _clean(df)
