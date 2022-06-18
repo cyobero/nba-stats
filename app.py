@@ -7,9 +7,10 @@ cli = HoopsRefClient()
 st.title("NBA Team Per Game Statistics")
 st.subheader("Exploratory Data Analysis for Teams' Season Averages")
 st.markdown("""
-            Data source: [basketball-reference.com](https://www.basketball-reference.com)
-            Author: Czar Yobero (open to work)
-            Email: cyobero@gmail.com
+            Data source:
+            [basketball-reference.com](https://www.basketball-reference.com)\n
+            Author: Czar Yobero (open to work)\n
+            Email: cyobero@gmail.com\n
 """)
 
 season = st.selectbox("Select season", options=[
